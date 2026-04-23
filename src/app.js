@@ -24,3 +24,11 @@ const generateBtn   = document.getElementById("generateCard");
 const widthInput    = document.getElementById("cardWidth");
 const heightInput   = document.getElementById("cardHeight");
 const countdownElement   = document.getElementById("countdown");
+
+const TIMER_SECONDS = 10;
+let secondsLeft = TIMER_SECONDS;
+let countdownInterval;
+
+function getRandomInterval(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
