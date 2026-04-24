@@ -19,14 +19,43 @@ body {
   border-radius: 12px;
   border: 2px solid #ccc;
   box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.4);
+  position: relative;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 10px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   cursor: default;
   user-select: none;
+}
+
+.corner {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.1;
+}
+
+.corner-tl {
+  top: 8px;
+  left: 10px;
+}
+
+.corner-br {
+  bottom: 8px;
+  right: 10px;
+  transform: rotate(180deg);
+}
+
+.corner-val {
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.card-suit-center {
+  font-size: 3rem;
+  line-height: 1;
 }
 
 #cardContainer:hover {
@@ -44,32 +73,29 @@ body {
   animation: flipIn 0.3s ease forwards;
 }
 
-/* Palo (suit) */
+/* Palo (suit) en esquinas */
 .card-suit {
-  font-size: 1.4rem;
-  line-height: 1;
-}
-
-#suitBottom {
-  transform: rotate(180deg);
-}
-
-/* Valor central */
-#cardValue {
-  font-size: 2rem;
-  font-weight: bold;
+  font-size: 1rem;
   line-height: 1;
 }
 
 /* Color rojo para corazones y diamantes */
-#cardContainer.red .card-suit,
-#cardContainer.red #cardValue {
+#cardContainer.heart .card-suit,
+#cardContainer.heart .corner-val,
+#cardContainer.heart .card-suit-center,
+#cardContainer.diamond .card-suit,
+#cardContainer.diamond .corner-val,
+#cardContainer.diamond .card-suit-center {
   color: #d00;
 }
 
 /* Color negro para picas y tréboles */
-#cardContainer.black .card-suit,
-#cardContainer.black #cardValue {
+#cardContainer.spade .card-suit,
+#cardContainer.spade .corner-val,
+#cardContainer.spade .card-suit-center,
+#cardContainer.club .card-suit,
+#cardContainer.club .corner-val,
+#cardContainer.club .card-suit-center {
   color: #111;
 }
 

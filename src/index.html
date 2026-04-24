@@ -19,9 +19,15 @@
 
      
       <div id="cardContainer" class="card mx-auto">
-        <div class="card-suit" id="suitTop"></div>
-        <div class="card-value" id="cardValue"></div>
-        <div class="card-suit" id="suitBottom"></div>
+        <div class="corner corner-tl">
+          <span id="cardValue" class="corner-val"></span>
+          <span id="suitTop" class="card-suit"></span>
+        </div>
+        <span id="cardCenter" class="card-suit-center"></span>
+        <div class="corner corner-br">
+          <span id="suitBottom" class="card-suit"></span>
+          <span id="cardValueBottom" class="corner-val"></span>
+        </div>
       </div>
 
      
